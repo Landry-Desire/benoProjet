@@ -1,0 +1,39 @@
+<div id="profilePanel" style="width:50%">
+	<h2><span class="glyphicon glyphicon-lock"></span> Profile </h2>
+	<form class="form-horizontal" role="form" name="form">
+	<span>Professeur</span>
+		<div class="form-group">
+			<label for="nom" class="control-label"> Nom </label>
+			<input type="text" class="form-control" ng-model="nom" id="nom" placeholder="Nom">
+		</div>
+		<div class="form-group">
+			<label for="prenom" class="control-label"> Prenom </label>
+			<input type="text" class="form-control" ng-model="prenom" id="prenom" placeholder="Prenom">
+		</div>
+		<div class="form-group">
+			<label for="groupeId" class="control-label"> GroupeId </label>
+			<input type="text" class="form-control" ng-model="groupeId" id="groupeId" placeholder="groupeId">
+		</div>
+		<div class="form-group">
+			<label for="email" class="control-label"> Email </label>
+			<input type="email" class="form-control" ng-model="email" id="email" placeholder="email">
+		</div>
+		<div class="form-group">
+			<label for="mdp" class="control-label"> Mot de Passe </label>
+			<input type="text" class="form-control" ng-model="mdp" id="mdp" placeholder="Mot de Passe">
+		</div>
+		<div class="form-group">
+			<select ng-model="hierachie" >
+				 <option value="Etudiant">Etudiant</option> 
+	   			 <option value="Secretaire">Secretaire</option> 
+	   			 <option value="Prof">Professeur</option> 
+			</select>
+		</div>
+		<div class="form-group">
+			<div >
+				<button class="btn btn-default" type="submit" ng-click="valider()">Valider</button>
+			</div>
+			
+		</div>
+	</form>
+</div>
