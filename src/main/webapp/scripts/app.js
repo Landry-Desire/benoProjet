@@ -3,6 +3,7 @@
 angular.module('News',[]);
 angular.module('Secretaire',[]);
 angular.module('Login',['ngCookies']);
+angular.module('Inscription',[]);
 
 angular
   .module('benoApp', [
@@ -10,7 +11,8 @@ angular
     'ngCookies',
     'News',
     'Secretaire',
-    'Login'
+    'Login',
+    'Inscription'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -26,6 +28,10 @@ angular
         templateUrl: 'views/login.html',
         controller:  'LoginCtrl'
       })
+	  .when('/inscription', {
+		templateUrl : 'views/inscription.html',
+		controller : 'InscriptionCtrl'
+	  })
       .otherwise({templateUrl: '404.html'})
   })
   .run(['$rootScope', '$location', '$cookies', '$http','$window',

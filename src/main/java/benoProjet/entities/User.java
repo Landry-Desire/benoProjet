@@ -24,7 +24,6 @@ public class User implements Serializable{
 	@Column(length=30)
 	private String prenom;
 	private String hierachie;
-	private String groupeId;
 	private String mdp;
 	private String email;
 	private Boolean valide;
@@ -46,12 +45,6 @@ public class User implements Serializable{
 	}
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
-	}
-	public String getGroupeId() {
-		return groupeId;
-	}
-	public void setGroupeId(String groupeId) {
-		this.groupeId = groupeId;
 	}
 	public String getHierachie() {
 		return hierachie;

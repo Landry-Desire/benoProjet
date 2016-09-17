@@ -1,0 +1,40 @@
+<div id="inscription" style="width:50%">
+	<h2></span> Pre-inscription </h2>
+	<form class="form-horizontal" ng-submit="inscrit()" role="form" name="form">
+		<div class="form-group">
+			<label for="nom" class="control-label"> Nom </label>
+			<input type="text" class="form-control" ng-model="nom" id="nom" placeholder="Your Name">
+		</div>
+		<div class="form-group">
+			<label for="prenom" class="control-label"> Prénom </label>
+			<input type="prenom" class="form-control" ng-model="prenom" id="prenom" placeholder="Your Last Name">
+		</div>
+		<div class="form-group">
+			<label for="email" class="control-label"> Email </label>
+			<input type="email" class="form-control" ng-model="email" id="email" placeholder="Your Email">
+		</div>
+		<div class="form-group">
+			<label for="mdp" class="control-label"> Password </label>
+			<input type="password" class="form-control" ng-model="mdp" id="mdp" placeholder="Your Password please">
+		</div>
+		<div class="form-group">
+			<label for="cmdp" class="control-label">Confirmation du Mot de Passe </label>
+			<input type="password" class="form-control" ng-model="cmdp" id="cmdp" placeholder="Confirmation du Mot de Passe">
+		</div>
+		<div class="form-group">
+			<label for="valide" class="control-label">Valide</label>
+			<input type="checkbox" ng-model="valide" checked>
+		</div>
+		<div class="form-group">
+			<select ng-model="hierachie" >
+				 <option value="Etudiant">Etudiant</option>  
+	   			 <option value="Prof">Professeur</option> 
+			</select>
+		</div>
+		<div class="form-group">
+			<div >
+				<button class="btn btn-default" type="submit" ng-click="inscrit()">Valider</button>
+			</div>
+		</div>
+	</form>
+</div>

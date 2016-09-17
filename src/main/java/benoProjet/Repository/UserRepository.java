@@ -26,7 +26,35 @@ public class UserRepository {
 	private EntityManager entityManager;
 	
 	public void addUser(User user){
-		entityManager.persist(user);
+			Query requete = entityManager.createNativeQuery("SELECT * FROM User WHERE email='"+user.getEmail()+"' AND nom='"+user.getNom()+"' AND prenom='"+user.getPrenom()+"'", User.class);
+			List<User> users = requete.getResultList();
+			String nom = null;
+			String prenom = null;
+			String email = null;
+			try {
+				if(users.size() != 0){
+					for(int i=0; i<= users.size();i++){
+						nom = users.get(i).getNom();
+						prenom = users.get(i).getPrenom();
+						email = users.get(i).getEmail();
+						i++;
+					}
+					if(email.equals(user.getEmail()) && nom.equals(user.getNom()) && prenom.equals(user.getPrenom())){
+						System.out.println("impossible-------->");
+						Response.status(Status.NOT_FOUND).build();
+					}else{
+						entityManager.persist(user);
+					}
+				} else{
+			
+					entityManager.persist(user);
+				}	
+			} catch (Exception e) {
+				// TODO: handle exception
+				System.out.println("not found");
+				Response.status(Status.NOT_FOUND).build();
+			}
+			
 	}
 	
 	public void deleteUser(String email){
