@@ -27,7 +27,8 @@ public class User implements Serializable{
 	private String groupeId;
 	private String mdp;
 	private String email;
-
+	private Boolean valide;
+	
 	public long getId() {
 		return id;
 	}
@@ -69,5 +70,11 @@ public class User implements Serializable{
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public Boolean getValide() {
+		return valide;
+	}
+	public void setValide(Boolean valide) {
+		this.valide = valide;
 	}
 }
